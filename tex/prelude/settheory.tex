@@ -1,0 +1,90 @@
+%
+% Copyright © 2013 Edward O'Callaghan. All Rights Reserved.
+%
+
+\section{Set theory} % (fold)
+\label{sec:settheory}
+
+It has been proposed that the framework of \emph{set theory} is sufficient to
+support the foundations of mathematics. We shall revise this later by lifting
+mathematics to a new modern and very actively researched framework. However,
+for now, we digress and consider set theory as it is of course no less useful.
+
+Let us consider some of set theories histrionics for it contains rich lessons
+in logical failles not to be forgotten. Set theory in its early development had
+very loss definitions of what exactly is a \emph{set}. The inadequacy of the
+loss definition of a set as simply a `collection of objects` becomes blindingly
+apparent with the logical inconsistencies that arose such as the famous
+"Russell's paradox".
+% cite:
+% George Cantor
+% Burali-Forti
+% Burtrand Russell
+
+In light of these logical inconsistencies it became apparent that such notions
+of what constitutes a \emph{set} must be defined more meticulously. However,
+since the very notion of a set, due in part to its simplicity, is outside scope
+it is by is very nature undefinable in a rigours manner. Thus sets are
+axiomatic and hence outside the scope of `logical provability`, latter
+formalised as the \emph{incompleteness theorem}. Serveral axiomatic systems
+were however devised to deal with the logical inconsisances, the most popular
+of which is the ZFN system.
+% cite: systems -
+% ZFN
+% GHB
+% RW
+..
+
+\begin{defn}
+ A object $x$ contained in a set $X$ is said to be an \emph{element} of the
+ set, denoted $x \in X$. The logical negation $\neg (x \in X)$ is written
+ $x \not \in X$ and read as $x$ is \emph{not} an element of the set $X$.
+\end{defn}
+
+..
+
+\begin{defn}
+ Equality of two sets $X$ and $Y$ is defined by; $X=Y$ if and only if
+ $X \subseteq Y$ and $Y \subseteq X$.
+\end{defn}
+
+Set \emph{intersections} can be understood as a generalisation of predicate
+logic "and" conjunction written $\wedge$ between elements to intersections
+between sets of elements written $\cap$. More formally;
+
+\begin{defn}
+ The \emph{intersections} of two sets $X$ and $Y$ is defined as the set,
+ $X \cap Y = \{ x \in X \wedge y \in Y \}$.
+\end{defn}
+
+\begin{lem}
+ Set intersection \emph{idempotent} property $X \cap X = X$.
+\end{lem}
+
+Set \emph{unions} can then be understood as the logical negation of
+intersections. Hence the logical "or" disjunction written $\vee$ between
+elements to unions between sets of elements written $\cup$. More formally;
+
+\begin{defn}
+ The \emph{unions} of two sets $X$ and $Y$ is defined as the set,
+ $X \cup Y = \{ x \in X \vee y \in Y \}$.
+\end{defn}
+
+\begin{lem}
+ Set union \emph{idempotent} property $X \cup X = X$.
+\end{lem}
+
+In symbols, recall that $x \wedge y$ for booleans variables $x,y$ then leads us
+to $X \cap Y$ for sets $X,Y$. So, since $\neg (x \wedge y)= \neg x \vee \neg y$
+we have that $\neg (x \in X \cap y \in Y) = \neg (x \in X) \cup \neg (y \in Y)$.
+We then adopt a more general notation for set logical negations called the
+\emph{complement} written $X^c$ defined in the following way;
+If $\neg (x \in X)$ then $x \not \in X$ and so for every $x \not \in X$ we form
+the complement set written $X^c$ for which $x \in X^c$ whenever $x \not \in X$.
+
+Hence we arrive at DeMorgan's laws:
+\begin{itemize}
+ \item $(X \cap Y)^c = X^c \cup Y^c$ and
+ \item $(X \cup Y)^c = X^c \cap Y^c$.
+\end{itemize}
+

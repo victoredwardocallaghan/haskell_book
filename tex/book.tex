@@ -1,0 +1,111 @@
+%
+% Copyright © 2013 Edward O'Callaghan. All Rights Reserved.
+%
+
+\documentclass{book}
+
+\usepackage{texstyle}
+
+%
+\begin{document}
+
+% Document title & author
+\title{Haskell Book}
+\author{Edward O'Callaghan}
+
+% Turn on arabic page numbers and unnumbered chapters
+\frontmatter
+
+% Half-title, title, copyright page do not have displayed page numbers
+\pagestyle{empty}
+
+% Title page and copyright
+\include{front}
+
+% Add Preface to PDF Metadata but not printed TOC
+\hypertarget{preface}{}
+\bookmark[dest=preface]{Preface}
+
+% Preface and TOC have arabic numbers
+\pagestyle{fancyplain}
+
+\include{preface}
+
+% Add TOC to PDF Metadata but not printed TOC
+\hypertarget{toc}{}
+\bookmark[dest=toc]{Table of Contents}
+
+\setcounter{tocdepth}{1} % chapters and sections for the toc
+\tableofcontents
+\setcounter{tocdepth}{2} % chapters, sections, and subsections for the
+                         % metadata of the pdf
+
+% Turn on roman page numbers and numbered chapters
+\mainmatter
+% Turn on headers and footers for mainmatter (must appear after \cleartooddpage)
+\pagestyle{fancyplain}
+
+
+\include{introduction}
+
+
+%%%
+\part{Foundations in Mathematics and Computation}
+\label{part:foundationsinmathandcomp}
+
+% TODO.
+\include{prelude}
+\include{algorithmsi}
+\include{typetheoryi}
+\include{algebra}
+\include{datastructures}
+\include{algorithmsi}
+
+
+%%%
+\part{Higher Computational Theory}
+\label{part:highercomp}
+
+% TODO.
+..
+
+
+% Appendix
+\cleartooddpage[\thispagestyle{empty}] % Needed for correct TOC
+\phantomsection % Needed for correct TOC also
+\part*{Appendix}
+
+% We use magic to get the appendix look like Bibliography and Index
+\appendix
+
+\renewcommand{\chaptermark}[1]{\markboth{\textsc{Appendix. \thechapter. #1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textsc{\thesection\ #1}}}
+
+
+% Bibliography
+\bibliographystyle{halpha}
+\phantomsection % black magic to get TOC to point to correct page
+\addcontentsline{toc}{part}{\bibname}
+\markboth{}{\textsc{Bibliography}}
+{\renewcommand{\markboth}[2]{} % Prevent bibliography from resetting the header to something silly
+\bibliography{references}}
+
+%%%% Index of symbols
+\include{symbols}
+
+%%%% Index of terms
+%% Global cross-references for index
+\indexsee{principle}{axiom}
+
+
+% tell the index to get itself into the table of contents
+\phantomsection % black magic to get TOC to point to correct page
+\addcontentsline{toc}{part}{Index}
+\markboth{}{\textsc{Index}}
+\renewcommand{\markboth}[2]{}
+{\footnotesize\setlength{\columnsep}{15.0pt}\printindex}
+
+% The back cover
+\include{back}
+
+\end{document}

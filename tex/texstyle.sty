@@ -1,0 +1,78 @@
+%
+% Copyright © 2013 Edward O'Callaghan. All Rights Reserved.
+%
+
+\ProvidesPackage{texstyle}
+
+\usepackage{etex}
+\usepackage{etoolbox}
+\usepackage{trace}
+
+% Page Geometry
+\usepackage{geometry}
+
+% Debug Page Layout
+\usepackage{layout}
+
+% Fonts
+\usepackage{mathpazo}
+\usepackage[scaled=0.95]{helvet}
+\usepackage{courier}
+\linespread{1.05}
+
+\usepackage[numbered]{bookmark}
+\usepackage{fullpage}
+
+\usepackage{natbib}
+
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs}
+\usepackage{setspace, graphicx, enumerate, cancel}
+\usepackage{pbox}
+\usepackage{fancyvrb}
+% To set headers and footers
+\usepackage{fancyhdr}
+% So we can jump to odd-numbered pages
+\usepackage{nextpage}
+\usepackage{mdframed}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{wallpaper}
+
+\usepackage{amssymb,amsmath,amsthm,stmaryrd,mathrsfs,wasysym}
+\usepackage{enumitem,mathtools,xspace}
+\usepackage{aliascnt}
+
+\usepackage{listings}
+\usepackage{sidecap}
+\usepackage{comment}
+\usepackage[capitalize]{cleveref}
+
+% Multi-Columns for long lists of names
+\usepackage{multicol}
+
+\usepackage{braket}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing,arrows}
+
+\usepackage{pgf, tikz, tikz-cd, pgfplots}
+
+
+\input{macros}
+
+% Make Index
+\usepackage{makeidx}
+\makeindex
+
+%%%% Header and footers
+\pagestyle{fancyplain}
+\setlength{\headheight}{15pt}
+\renewcommand{\chaptermark}[1]{\markboth{\textsc{Chapter \thechapter. #1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textsc{\thesection\ #1}}}
+
+\lhead[\fancyplain{}{{\thepage}}]%
+      {\fancyplain{}{\nouppercase{\rightmark}}}
+\rhead[\fancyplain{}{\nouppercase{\leftmark}}]%
+      {\fancyplain{}{\thepage}}
+\cfoot[]{}
+\lfoot[]{}
+\rfoot[]{}

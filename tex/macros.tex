@@ -1,0 +1,70 @@
+%
+% Copyright © 2013 Edward O'Callaghan. All Rights Reserved.
+%
+
+
+% A judgmental equality currently being defined
+\newcommand{\defeq}{\vcentcolon\equiv}
+
+%%% Term being defined
+\newcommand{\define}[1]{\textbf{#1}}
+
+\def\defthm#1#2#3{%
+  %% Ensure all theorem types are numbered with the same counter
+  \newaliascnt{#1}{thm}
+  \newtheorem{#1}[#1]{#2}
+  \aliascntresetthe{#1}
+  %% This command tells cleveref's \cref what to call things
+  \crefname{#1}{#2}{#3}}
+
+% Now define a bunch of theorem-type environments.
+\newtheorem{thm}{Theorem}[section]
+\theoremstyle{definition}
+\defthm{defn}{Definition}{Definitions}
+
+% AMS Theorems
+\theoremstyle{plain} % default
+%\newtheorem{thm}{Theorem}[section]
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{question}[thm]{Question}
+
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{cor}{Corollary}
+
+\theoremstyle{definition}
+%\newtheorem{defn}[thm]{Definition}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{exmp}[thm]{Example}
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{note}{Note}
+\newtheorem{case}{Case}
+
+\newcommand{\Cat}{\mathcal{K}}
+\newcommand{\Id}{\mathit{id}_}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Ga}{\mathbb{G}}
+
+
+%%% Arrows
+\newcommand{\epi}{\ensuremath{\twoheadrightarrow}}
+\newcommand{\mono}{\ensuremath{\rightarrowtail}}
+
+%%%% INDEX %%%%
+
+% If you index something that is in a footnote
+\newcommand{\footstyle}[1]{{\hyperpage{#1}}n}
+% Style for pageref to a definition
+\newcommand{\defstyle}[1]{\textbf{\hyperpage{#1}}}
+
+\newcommand{\indexdef}[1]{\index{#1|defstyle}} % Index a definition
+\newcommand{\indexfoot}[1]{\index{#1|footstyle}} % Index a term in a footnote
+\newcommand{\indexsee}[2]{\index{#1|see{#2}}} % Index "see also"
